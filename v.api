@@ -1,0 +1,22 @@
+<?php
+$server="localhost";
+$username="id20665171_unnatisaraswat";
+$password="Manu#2004**UU";
+$database="id20665171_unnati";
+$con=mysqil_connect($server,$username,$password,$database);
+if($con)
+{
+    $name=$_POST['username'];
+    $email=$_POST['email'];
+    
+    $sql="INSERT into tbl_regis(name,email,mobile) values('$fname','$lname')";
+    if(mysqli_query($con,$sql)){
+        //echo "records saved successfully.";
+        function_alert("Thanks for sending Message");
+    }
+    else{
+        echo"ERROR: Could not able to execute $sql.".
+        mysqli_error($con);
+    }
+mysqli_close($con);    
+}
